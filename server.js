@@ -3,7 +3,7 @@ const app = express();
 
 const RESTAURANT = {
   name: "The Green Byte Bistro",
-  isOpen: true,
+  isOpen: false,
   address: "742 Evergreen Rd, Mapleview, OS 45502",
   phone: "555-321-9876",
   menu: [
