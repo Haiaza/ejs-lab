@@ -67,4 +67,6 @@ app.get("/menu", (req, res) => {
   res.render("menu.ejs", {
     menu: RESTAURANT.menu,
   });
+
+app.get("/menu/:category")
 });
