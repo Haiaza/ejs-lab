@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require("express");
 const app = express();
 
@@ -55,9 +56,12 @@ const RESTAURANT = {
   ],
 };
 
-app.listen(3000);
+app.listen(3000), () =>{
+  console.log(`Secret pass = ${process.env.SECRET_PASSWORD}`)
+};
 
 app.get("/", (req, res) => {
+  console.log(`Secret pass = ${process.env.SECRET_PASSWORD}`)
   res.render("home.ejs", {
     RESTAURANT,
   });
@@ -80,3 +84,4 @@ app.get("/menu/:category", (req, res) => {
 
   })
 })
+
