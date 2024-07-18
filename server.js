@@ -3,7 +3,7 @@ const app = express();
 
 const RESTAURANT = {
   name: "The Green Byte Bistro",
-  isOpen: false,
+  isOpen: true,
   address: "742 Evergreen Rd, Mapleview, OS 45502",
   phone: "555-321-9876",
   menu: [
@@ -69,8 +69,13 @@ app.get("/menu", (req, res) => {
   })
 });
 
+
 app.get("/menu/:category", (req, res) => {
-  res.render("category.ejs", {
-    menuItems : [req.params] // wrong so wrong lol
+  const menuCategory = req.params.category;
+  const menuItems = RESTAURANT.menu.filter(item => item.category === menuCategory)
+  
+  res.render("category.ejs",{
+    items: menuItems,
+
   })
 })
