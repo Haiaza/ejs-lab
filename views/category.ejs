@@ -7,7 +7,12 @@
 </head>
 <body>
     <%-  include('./partials/nav')%>
-    <h1><%= items.name%></h1>
+    <% items.forEach(item => { %>
+        <%= item.name %><br>
+        $<%= item.price %><br>
+        <%= item.details %><br>
+        <%= item.rating %> out of 5 stars<br><br>
+    <% }) %>
 
     
 </body>
