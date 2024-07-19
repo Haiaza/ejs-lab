@@ -12,7 +12,10 @@
       <h2><%= item.name %></h2><br>
       <%= item.price %><br>
       <%= item.details %><br>
-      <%= item.rating %> out of 5 stars<br><br>
-    <% }) %></p>
+      <% if (item.rating === 5) { %>
+        ⭐<%= item.rating %> out of 5 stars⭐<br><br>
+      <% } else { %>
+        <%= item.rating %> out of 5 stars<br><br> %>
+    <% }}) %></p>
   </body>
 </html>
